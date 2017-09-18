@@ -1,0 +1,79 @@
+<app-header></app-header>
+
+<div class="col-sm-12 col-md-12">
+  <div class="row">
+    <div class="col-md-3 col-md-offset-2">
+      <h2>
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <span>Checkout</span>
+      </h2>
+    </div>
+    <div class="col-md-2 text-center">
+      <h4>
+        Order Total
+        <span class="text-danger">{{(cart | async).grossTotal | currency:'INR':true}}</span>
+      </h4>
+    </div>
+    <div class="col-md-3 text-right">
+      <h5 class="text-red" *ngIf="(cart | async).deliveryOptionId === undefined">Please select a delivery option...</h5>
+      <a class="btn btn-success btn-lg" *ngIf="(cart | async).deliveryOptionId !== undefined" routerLink="/confirmed">Purchase Order</a>
+    </div>
+    <div class="col-lg-8 col-lg-offset-2">
+        <hr>
+       </div>
+  </div>
+  <div class="row">
+    <div class="col-md-7">
+      <!-- <h4>Delivery 1 of 1</h4>
+      <small>Dispatching to the UK....</small> -->
+      <div class="row checkout_row" *ngFor="let item of cartItems">
+        <div class="col-md-4 text-center">
+          <img src="./assets/{{item.product.id}}.jpg" style="height:128px;width:128px;"  />
+        </div>
+        <div class="col-md-2">
+          <strong> <span>{{item.product.name}}</span></strong>
+          <p class="">{{item.product.description}}</p>
+        </div>
+        <div class="col-md-2 text-right">
+         <h4> <p class="text-danger">{{item.quantity}} x {{item.product.price | currency:'INR':true}}</p></h4>
+        </div>
+        <div class="col-md-3 text-right">
+          <h4>
+            <p class="text-danger">{{item.totalCost | currency:'INR':true}}</p>
+          </h4>
+        </div>
+        <div class='col-lg-8 col-lg-offset-2'>
+            <hr>
+           </div>
+      </div>
+      
+    </div>
+
+    <div class="col-md-4">
+      <h4>Delivery Options</h4>
+
+      <div class="row delivery-option" *ngFor="let option of deliveryOptions | async">
+        <div class="col-sm-1">
+          <input type="radio" name="delivery_option" id="{{option.name}}" [checked]="option.id === (cart | async).deliveryOptionId"
+            (click)="setDeliveryOption(option)">
+        </div>
+        <div class="col-sm-9">
+          <label class="text-bold" for="{{option.name}}" (click)="setDeliveryOption(option)">{{option.name}}</label>
+        </div>
+        <div class="col-sm-2">
+          <h4> <p class="text-bold text-danger">{{option.price | currency:'INR':true}}</p></h4>
+        </div>
+        <div class="col-sm-12">
+          <p>{{option.description}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 small-centered">
+        <a class="btn btn-warning btn-lg btn-block"  routerLink="/">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+</div>

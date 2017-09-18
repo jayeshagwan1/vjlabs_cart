@@ -1,0 +1,119 @@
+[
+    {
+      "id": "Onion",
+      "price": 24.50,
+      "name": "Onion",
+      "description": "1 kg",
+      "ingredients": [
+        {
+          "name": "cucumber",
+          "percentage": 50
+        },
+        {
+          "name": "celery",
+          "percentage": 20
+        },
+        {
+          "name": "apple",
+          "percentage": 20
+        },
+        {
+          "name": "lemon",
+          "percentage": 10
+        }
+      ]
+    },
+    {
+      "id": "potatoes",
+      "price": 17.00,
+      "name": "Potatoes",
+      "description": "1 kg",
+      "ingredients": [
+        {
+          "name": "pineapple",
+          "percentage": 50
+        },
+        {
+          "name": "apple",
+          "percentage": 20
+        },
+        {
+          "name": "mint",
+          "percentage": 20
+        },
+        {
+          "name": "lemon",
+          "percentage": 10
+        }
+      ]
+    },
+    {
+      "id": "Rice",
+      "price": 78.00,
+      "name": "Basmati Rice Reg.",
+      "description": "1 kg",
+      "ingredients": [
+        {
+          "name": "apple",
+          "percentage": 50
+        },
+        {
+          "name": "beetroot",
+          "percentage": 20
+        },
+        {
+          "name": "ginger",
+          "percentage": 20
+        },
+        {
+          "name": "lemon",
+          "percentage": 10
+        }
+      ]
+    },
+    {
+      "id": "Saffola_Gold",
+      "price": 975.00,
+      "name": "Saffola Gold",
+      "description": "5 Ltr",
+      "ingredients": [
+        {
+          "name": "orange",
+          "percentage": 50
+        },
+        {
+          "name": "lemon",
+          "percentage": 20
+        },
+        {
+          "name": "apple",
+          "percentage": 20
+        },
+        {
+          "name": "tumeric",
+          "percentage": 10
+        }
+      ]
+    },
+    {
+      "id": "Tomato",
+      "price": 29.50,
+      "name": "Tomato",
+      "description": "1 kg",
+      "ingredients": [
+        {
+          "name": "Coconut",
+          "percentage": 70
+        },
+        {
+          "name": "Cinnamon",
+          "percentage": 20
+        },
+        {
+          "name": "water",
+          "percentage": 10
+        }
+      ]
+    }
+  ]
+  

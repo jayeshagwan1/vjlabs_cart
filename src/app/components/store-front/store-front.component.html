@@ -1,0 +1,75 @@
+<app-header></app-header>
+<div class="row">
+  <div class="col-xs-12 col-md-8">
+    <div class="col-sm-6 col-md-6" *ngFor="let product of products | async">
+      <div class="thumbnail">
+        <img src="./assets/{{product.id}}.jpg" style="height:256px;width:256px" />
+        <div class="caption">
+          <h3>{{product.name}}</h3>
+          <p>{{product.price | currency:'INR':true}}</p>
+          <p>{{product.description}}</p>
+          <p>
+            <button type="button" class="btn btn-success" (click)="addProductToCart(product, 1)">Add To Cart</button>
+            <button type="button" class="btn btn-primary" *ngIf="productInCart(product) | async" (click)="removeProductFromCart(product, 1)">Remove item from cart</button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8 col-md-4">
+      <app-shopping-cart></app-shopping-cart>
+    </div>
+</div>
+
+
+<!-- <div class="row">
+  <div class="col-xs-12 col-md-8">
+ 
+    <ul class="product-list">
+      <li *ngFor="let product of products | async" class="product-container">
+        <div class="row">
+          <div class="col-sm-12 col-xs-5 text-center">
+            <img src="./assets/{{product.id}}.jpg" class="product_image" />
+          </div>
+          <div class="col-md-5">
+            <div class="row">
+              <div class="col-md-6" style="font-weight: 900">{{product.name}}</div>
+              <div class="col-md-6 text-right"><small class="">{{product.price | currency:'INR':true}}</small></div>
+            </div>
+           
+
+                  <p>{{product.description}}</p>
+            <p>
+              <span><strong>ingredients:</strong> </span>
+              <br/>
+              <span *ngFor="let ingredient of product.ingredients ">
+                  {{ingredient.name}} ({{ingredient.percentage}}%)
+                  <br/>
+                </span>
+            </p>
+            <p>
+              <button type="button" class="btn btn-success" (click)="addProductToCart(product, 1)">Add To Cart</button>
+              <button type="button" class="btn btn-primary" *ngIf="productInCart(product) | async" (click)="removeProductFromCart(product, 1)">Remove item from cart</button>
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="col-xs-8 col-md-4">
+    <app-shopping-cart></app-shopping-cart>
+  </div>
+</div> -->
+
+<!-- <div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="..." alt="...">
+      <div class="caption">
+        <h3>Thumbnail label</h3>
+        <p>...</p>
+        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+      </div>
+    </div>
+  </div>
+</div> -->
